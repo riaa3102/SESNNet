@@ -1,0 +1,16 @@
+comet_ml
+gradio
+librosa
+matplotlib
+numpy==1.24.1
+onnxruntime==1.12.1
+seaborn
+SoundFile
+speechbrain
+torch
+torchinfo
+torchmetrics[audio]
+pesq
+pystoi
+PyYAML
+tqdm

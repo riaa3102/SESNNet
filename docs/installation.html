@@ -1,0 +1,766 @@
+<!doctype html>
+<html class="no-js" lang="Python" data-content_root="./">
+  <head><meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1"/>
+    <meta name="color-scheme" content="light dark"><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+<link rel="index" title="Index" href="genindex.html" /><link rel="search" title="Search" href="search.html" /><link rel="next" title="Code Documentation" href="modules/index.html" /><link rel="prev" title="Introduction" href="introduction.html" />
+
+    <!-- Generated with Sphinx 7.2.6 and Furo 2023.09.10 -->
+        <title>Quickstart - SESNNet documentation</title>
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=a746c00c" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/furo.css?v=135e06be" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/furo-extensions.css?v=36a5483c" />
+    
+    
+
+
+<style>
+  body {
+    --color-code-background: #f8f8f8;
+  --color-code-foreground: black;
+  
+  }
+  @media not print {
+    body[data-theme="dark"] {
+      --color-code-background: #202020;
+  --color-code-foreground: #d0d0d0;
+  
+    }
+    @media (prefers-color-scheme: dark) {
+      body:not([data-theme="light"]) {
+        --color-code-background: #202020;
+  --color-code-foreground: #d0d0d0;
+  
+      }
+    }
+  }
+</style></head>
+  <body>
+    
+    <script>
+      document.body.dataset.theme = localStorage.getItem("theme") || "auto";
+    </script>
+    
+
+<svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+  <symbol id="svg-toc" viewBox="0 0 24 24">
+    <title>Contents</title>
+    <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 1024 1024">
+      <path d="M408 442h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8zm-8 204c0 4.4 3.6 8 8 8h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56zm504-486H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zm0 632H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zM115.4 518.9L271.7 642c5.8 4.6 14.4.5 14.4-6.9V388.9c0-7.4-8.5-11.5-14.4-6.9L115.4 505.1a8.74 8.74 0 0 0 0 13.8z"/>
+    </svg>
+  </symbol>
+  <symbol id="svg-menu" viewBox="0 0 24 24">
+    <title>Menu</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-menu">
+      <line x1="3" y1="12" x2="21" y2="12"></line>
+      <line x1="3" y1="6" x2="21" y2="6"></line>
+      <line x1="3" y1="18" x2="21" y2="18"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-arrow-right" viewBox="0 0 24 24">
+    <title>Expand</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-chevron-right">
+      <polyline points="9 18 15 12 9 6"></polyline>
+    </svg>
+  </symbol>
+  <symbol id="svg-sun" viewBox="0 0 24 24">
+    <title>Light mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="feather-sun">
+      <circle cx="12" cy="12" r="5"></circle>
+      <line x1="12" y1="1" x2="12" y2="3"></line>
+      <line x1="12" y1="21" x2="12" y2="23"></line>
+      <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+      <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+      <line x1="1" y1="12" x2="3" y2="12"></line>
+      <line x1="21" y1="12" x2="23" y2="12"></line>
+      <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+      <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-moon" viewBox="0 0 24 24">
+    <title>Dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-moon">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+      <path d="M12 3c.132 0 .263 0 .393 0a7.5 7.5 0 0 0 7.92 12.446a9 9 0 1 1 -8.313 -12.454z" />
+    </svg>
+  </symbol>
+  <symbol id="svg-sun-half" viewBox="0 0 24 24">
+    <title>Auto light/dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-shadow">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+      <circle cx="12" cy="12" r="9" />
+      <path d="M13 12h5" />
+      <path d="M13 15h4" />
+      <path d="M13 18h1" />
+      <path d="M13 9h4" />
+      <path d="M13 6h1" />
+    </svg>
+  </symbol>
+</svg>
+
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation">
+<input type="checkbox" class="sidebar-toggle" name="__toc" id="__toc">
+<label class="overlay sidebar-overlay" for="__navigation">
+  <div class="visually-hidden">Hide navigation sidebar</div>
+</label>
+<label class="overlay toc-overlay" for="__toc">
+  <div class="visually-hidden">Hide table of contents sidebar</div>
+</label>
+
+
+
+<div class="page">
+  <header class="mobile-header">
+    <div class="header-left">
+      <label class="nav-overlay-icon" for="__navigation">
+        <div class="visually-hidden">Toggle site navigation sidebar</div>
+        <i class="icon"><svg><use href="#svg-menu"></use></svg></i>
+      </label>
+    </div>
+    <div class="header-center">
+      <a href="index.html"><div class="brand">SESNNet  documentation</div></a>
+    </div>
+    <div class="header-right">
+      <div class="theme-toggle-container theme-toggle-header">
+        <button class="theme-toggle">
+          <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
+          <svg class="theme-icon-when-auto"><use href="#svg-sun-half"></use></svg>
+          <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
+          <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
+        </button>
+      </div>
+      <label class="toc-overlay-icon toc-header-icon" for="__toc">
+        <div class="visually-hidden">Toggle table of contents sidebar</div>
+        <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
+      </label>
+    </div>
+  </header>
+  <aside class="sidebar-drawer">
+    <div class="sidebar-container">
+      
+      <div class="sidebar-sticky"><a class="sidebar-brand" href="index.html">
+  
+  
+  <span class="sidebar-brand-text">SESNNet  documentation</span>
+  
+</a><form class="sidebar-search-container" method="get" action="search.html" role="search">
+  <input class="sidebar-search" placeholder="Search" name="q" aria-label="Search">
+  <input type="hidden" name="check_keywords" value="yes">
+  <input type="hidden" name="area" value="default">
+</form>
+<div id="searchbox"></div><div class="sidebar-scroll"><div class="sidebar-tree">
+  <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="introduction.html">Introduction</a></li>
+<li class="toctree-l1 current current-page"><a class="current reference internal" href="#">Quickstart</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="modules/index.html">Code Documentation</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" role="switch" type="checkbox"/><label for="toctree-checkbox-1"><div class="visually-hidden">Toggle navigation of Code Documentation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2 has-children"><a class="reference internal" href="modules/data/index.html">Data</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" role="switch" type="checkbox"/><label for="toctree-checkbox-2"><div class="visually-hidden">Toggle navigation of Data</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="modules/data/data.html">Dataset</a></li>
+<li class="toctree-l3"><a class="reference internal" href="modules/data/transform.html">Transform</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="modules/stft.html">STFT</a></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="modules/model/index.html">Modules</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" role="switch" type="checkbox"/><label for="toctree-checkbox-3"><div class="visually-hidden">Toggle navigation of Modules</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="modules/model/se.html">Speech enhancement</a></li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="modules/model/snn/index.html">Spiking Neural Network</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" role="switch" type="checkbox"/><label for="toctree-checkbox-4"><div class="visually-hidden">Toggle navigation of Spiking Neural Network</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l4 has-children"><a class="reference internal" href="modules/model/snn/model/index.html">SNN model</a><input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" role="switch" type="checkbox"/><label for="toctree-checkbox-5"><div class="visually-hidden">Toggle navigation of SNN model</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l5"><a class="reference internal" href="modules/model/snn/model/snnbase.html">SNN base class</a></li>
+<li class="toctree-l5"><a class="reference internal" href="modules/model/snn/model/fcsnn.html">FCSNN class</a></li>
+<li class="toctree-l5"><a class="reference internal" href="modules/model/snn/model/csnn.html">CSNN class</a></li>
+<li class="toctree-l5"><a class="reference internal" href="modules/model/snn/model/unetsnn.html">U-Net SNN class</a></li>
+<li class="toctree-l5"><a class="reference internal" href="modules/model/snn/model/resbottleneckunetsnn.html">ResBottleneck U-Net SNN class</a></li>
+</ul>
+</li>
+<li class="toctree-l4 has-children"><a class="reference internal" href="modules/model/snn/layer/index.html">SNN layer</a><input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" role="switch" type="checkbox"/><label for="toctree-checkbox-6"><div class="visually-hidden">Toggle navigation of SNN layer</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l5"><a class="reference internal" href="modules/model/snn/layer/linear.html">Linear layer class</a></li>
+<li class="toctree-l5"><a class="reference internal" href="modules/model/snn/layer/scale.html">Scale layer class</a></li>
+<li class="toctree-l5"><a class="reference internal" href="modules/model/snn/layer/recurrent.html">Recurrent layer class</a></li>
+<li class="toctree-l5"><a class="reference internal" href="modules/model/snn/layer/upsampling.html">Upsampling layer class</a></li>
+<li class="toctree-l5"><a class="reference internal" href="modules/model/snn/layer/neuron.html">Neuron model layer class</a></li>
+<li class="toctree-l5"><a class="reference internal" href="modules/model/snn/layer/lif.html">LIF layer class</a></li>
+</ul>
+</li>
+<li class="toctree-l4 has-children"><a class="reference internal" href="modules/model/snn/block/index.html">SNN block</a><input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" role="switch" type="checkbox"/><label for="toctree-checkbox-7"><div class="visually-hidden">Toggle navigation of SNN block</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l5"><a class="reference internal" href="modules/model/snn/block/fcblock.html">Fully Connected block class</a></li>
+<li class="toctree-l5"><a class="reference internal" href="modules/model/snn/block/cblock.html">Convolutional block class</a></li>
+<li class="toctree-l5"><a class="reference internal" href="modules/model/snn/block/rescblock.html">Residual block class</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="modules/model/surrogate/index.html">Surrogate gradient</a><input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" role="switch" type="checkbox"/><label for="toctree-checkbox-8"><div class="visually-hidden">Toggle navigation of Surrogate gradient</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l4"><a class="reference internal" href="modules/model/surrogate/super_spike.html">SuperSpike</a></li>
+<li class="toctree-l4"><a class="reference internal" href="modules/model/surrogate/sigmoid.html">Sigmoid Derivative</a></li>
+<li class="toctree-l4"><a class="reference internal" href="modules/model/surrogate/atan.html">ATan Derivative</a></li>
+<li class="toctree-l4"><a class="reference internal" href="modules/model/surrogate/piecewise_linear.html">Piecewise Linear</a></li>
+</ul>
+</li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="modules/model/ann/index.html">Artificial Neural Network</a><input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" role="switch" type="checkbox"/><label for="toctree-checkbox-9"><div class="visually-hidden">Toggle navigation of Artificial Neural Network</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l4 has-children"><a class="reference internal" href="modules/model/ann/model/index.html">ANN model</a><input class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" role="switch" type="checkbox"/><label for="toctree-checkbox-10"><div class="visually-hidden">Toggle navigation of ANN model</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l5"><a class="reference internal" href="modules/model/ann/model/annbase.html">ANN base class</a></li>
+<li class="toctree-l5"><a class="reference internal" href="modules/model/ann/model/cnn.html">CNN class</a></li>
+<li class="toctree-l5"><a class="reference internal" href="modules/model/ann/model/unet.html">U-Net ANN class</a></li>
+<li class="toctree-l5"><a class="reference internal" href="modules/model/ann/model/resbottleneckunet.html">ResBottleneck U-Net ANN class</a></li>
+</ul>
+</li>
+<li class="toctree-l4 has-children"><a class="reference internal" href="modules/model/ann/block/index.html">ANN block</a><input class="toctree-checkbox" id="toctree-checkbox-11" name="toctree-checkbox-11" role="switch" type="checkbox"/><label for="toctree-checkbox-11"><div class="visually-hidden">Toggle navigation of ANN block</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l5"><a class="reference internal" href="modules/model/ann/block/cblock.html">Convolutional block class</a></li>
+<li class="toctree-l5"><a class="reference internal" href="modules/model/ann/block/rescblock.html">Residual block class</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="modules/model/train.html">Training/Testing</a></li>
+<li class="toctree-l3"><a class="reference internal" href="modules/model/loss.html">Loss</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="modules/evaluation.html">Evaluation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="modules/visualization.html">Visualization</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="folders.html">Project Files Structure</a></li>
+</ul>
+
+</div>
+</div>
+
+      </div>
+      
+    </div>
+  </aside>
+  <div class="main">
+    <div class="content">
+      <div class="article-container">
+        <a href="#" class="back-to-top muted-link">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12z"></path>
+          </svg>
+          <span>Back to top</span>
+        </a>
+        <div class="content-icon-container">
+          
+<div class="theme-toggle-container theme-toggle-content">
+            <button class="theme-toggle">
+              <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
+              <svg class="theme-icon-when-auto"><use href="#svg-sun-half"></use></svg>
+              <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
+              <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
+            </button>
+          </div>
+          <label class="toc-overlay-icon toc-content-icon" for="__toc">
+            <div class="visually-hidden">Toggle table of contents sidebar</div>
+            <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
+          </label>
+        </div>
+        <article role="main">
+          <section id="quickstart">
+<h1>Quickstart<a class="headerlink" href="#quickstart" title="Link to this heading">#</a></h1>
+<section id="installation">
+<h2>Installation<a class="headerlink" href="#installation" title="Link to this heading">#</a></h2>
+<p>Install the packages using pip:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>pip<span class="w"> </span>install<span class="w"> </span>-r<span class="w"> </span>requirements.txt
+</pre></div>
+</div>
+</section>
+<section id="usage">
+<h2>Usage<a class="headerlink" href="#usage" title="Link to this heading">#</a></h2>
+<p>To train a speech enhancement SNN model, run the following command:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">python main.py --model_name UNetSNN --train_flag --nb_epochs 5 --batch_size 4 --learning_rate 0.0004 --train_neuron_parameters --recurrent_flag --detach_reset --use_ddp --pin_memory --empty_cache --evaluate_flag --perceptual_metric_flag --save_mem --deterministic</span>
+</pre></div>
+</div>
+<p>To test a pretrained speech enhancement SNN model, run the following command:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">python main.py --model_name UNetSNN --pretrained_flag --batch_size 4 --train_neuron_parameters --recurrent_flag --detach_reset --use_ddp --pin_memory --empty_cache --evaluate_flag --perceptual_metric_flag --save_mem --deterministic</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>If input data (for example STFT representation) is not computed, please add the following argument :</p>
+<blockquote>
+<div><p>--compute_representation</p>
+</div></blockquote>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>In order to use debug mode, please add the following argument :</p>
+<blockquote>
+<div><p>--debug_flag</p>
+</div></blockquote>
+</div>
+</section>
+<section id="arguments">
+<h2>Arguments<a class="headerlink" href="#arguments" title="Link to this heading">#</a></h2>
+<p>These are arguments that can be set from the command line args.</p>
+<p><p>This program enables user to train/test different models of speech enhancement using spiking neural networks.</p>
+</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">usage</span><span class="p">:</span> 
+ <span class="n">python</span> <span class="n">main</span><span class="o">.</span><span class="n">py</span>
+</pre></div>
+</div>
+<section id="named-arguments">
+<h3>Named Arguments<a class="headerlink" href="#named-arguments" title="Link to this heading">#</a></h3>
+<dl class="option-list">
+<dt><kbd>-m, --model_name</kbd></dt>
+<dd><p>Possible choices: FCSNN, CSNN, UNetSNN, ResBottleneckUNetSNN, CNN, UNet, ResBottleneckUNet</p>
+<p>Name of the model</p>
+<p>Default: &quot;UNetSNN&quot;</p>
+</dd>
+<dt><kbd>-msk, --use_mask</kbd></dt>
+<dd><p>Boolean that indicates weather to use direct approach or masking approach</p>
+<p>Default: False</p>
+</dd>
+<dt><kbd>-rec, --reconstruct_flag</kbd></dt>
+<dd><p>Boolean that indicates weather to enhance noisy speech or reconstruct clean speech</p>
+<p>Default: False</p>
+</dd>
+<dt><kbd>-rn, --representation_name</kbd></dt>
+<dd><p>Representation name</p>
+<p>Default: &quot;stft&quot;</p>
+</dd>
+<dt><kbd>-rdn, --representation_dir_name</kbd></dt>
+<dd><p>Representation directory name</p>
+<p>Default: &quot;STFT_4s_nfft=512_wl=512_hl=256&quot;</p>
+</dd>
+<dt><kbd>-tn, --transform_name</kbd></dt>
+<dd><p>Possible choices: maxabs, quantile_maxabs, normalize, standardize, shift, log_power, log10</p>
+<p>List that contains data transform name</p>
+<p>Default: ['log_power', 'standardize']</p>
+</dd>
+<dt><kbd>-cr, --compute_representation</kbd></dt>
+<dd><p>Boolean that indicates weather to compute data</p>
+<p>Default: False</p>
+</dd>
+<dt><kbd>--k</kbd></dt>
+<dd><p>KLIF neuron model k constant</p>
+<p>Default: 1.0</p>
+</dd>
+<dt><kbd>--tau</kbd></dt>
+<dd><p>PLIF neuron model time constant</p>
+<p>Default: 20.0</p>
+</dd>
+<dt><kbd>--tau_syn</kbd></dt>
+<dd><p>Spiking layer input current time constant</p>
+<p>Default: 0.00034</p>
+</dd>
+<dt><kbd>--tau_mem</kbd></dt>
+<dd><p>Spiking layer membrane potential time constant</p>
+<p>Default: 0.00034</p>
+</dd>
+<dt><kbd>--tau_syn_out</kbd></dt>
+<dd><p>Readout layer input current time constant</p>
+<p>Default: 0.00034</p>
+</dd>
+<dt><kbd>--tau_mem_out</kbd></dt>
+<dd><p>Readout layer membrane potential time constant</p>
+<p>Default: 0.00034</p>
+</dd>
+<dt><kbd>--time_step</kbd></dt>
+<dd><p>SNN time step</p>
+<p>Default: 0.001</p>
+</dd>
+<dt><kbd>--membrane_threshold</kbd></dt>
+<dd><p>Spiking layer membrane threshold</p>
+<p>Default: 1.0</p>
+</dd>
+<dt><kbd>-di, --decay_input</kbd></dt>
+<dd><p>Boolean that indicates weather the input will decay</p>
+<p>Default: False</p>
+</dd>
+<dt><kbd>-spk, --spiking_mode</kbd></dt>
+<dd><p>Possible choices: binary, graded</p>
+<p>Spiking mode</p>
+<p>Default: &quot;binary&quot;</p>
+</dd>
+<dt><kbd>-rst, --reset_mode</kbd></dt>
+<dd><p>Possible choices: hard_reset, soft_reset</p>
+<p>Reset mode: reset to zero (hard_reset) or reset by subtraction (soft_reset)</p>
+<p>Default: &quot;soft_reset&quot;</p>
+</dd>
+<dt><kbd>-dr, --detach_reset</kbd></dt>
+<dd><p>Boolean that indicates weather to detach the computation graph of reset term in backward</p>
+<p>Default: False</p>
+</dd>
+<dt><kbd>-wm, --weight_mean</kbd></dt>
+<dd><p>Mean of weight initialization</p>
+<p>Default: 0.0</p>
+</dd>
+<dt><kbd>-ws, --weight_std</kbd></dt>
+<dd><p>Standard deviation of weight initialization</p>
+<p>Default: 0.2</p>
+</dd>
+<dt><kbd>-wg, --weight_gain</kbd></dt>
+<dd><p>Gain of weight initialization</p>
+<p>Default: 5.0</p>
+</dd>
+<dt><kbd>-wi, --weight_init_dist</kbd></dt>
+<dd><p>Possible choices: <a href="#id1"><span class="problematic" id="id2">normal_</span></a>, <a href="#id3"><span class="problematic" id="id4">uniform_</span></a>, <a href="#id5"><span class="problematic" id="id6">kaiming_normal_</span></a>, <a href="#id7"><span class="problematic" id="id8">kaiming_uniform_</span></a>, <a href="#id9"><span class="problematic" id="id10">xavier_uniform_</span></a></p>
+<p>Weight initialization distribution</p>
+<p>Default: &quot;<a href="#id11"><span class="problematic" id="id12">normal_</span></a>&quot;</p>
+</dd>
+<dt><kbd>-inp, --input_dim</kbd></dt>
+<dd><p>Input layer dimension</p>
+<p>Default: 256</p>
+</dd>
+<dt><kbd>-hl, --hidden_dim_list</kbd></dt>
+<dd><p>List of hidden layers (linear layer) dimension</p>
+</dd>
+<dt><kbd>-hc, --hidden_channels_list</kbd></dt>
+<dd><p>List of hidden layers (convolutional layer) channels dimension</p>
+</dd>
+<dt><kbd>-k, --kernel_size</kbd></dt>
+<dd><p>List of convolutional layers kernel size</p>
+<p>Default: (3, 3)</p>
+</dd>
+<dt><kbd>-s, --stride</kbd></dt>
+<dd><p>List of convolutional layers stride</p>
+<p>Default: (1, 1)</p>
+</dd>
+<dt><kbd>-p, --padding</kbd></dt>
+<dd><p>List of convolutional layers padding</p>
+</dd>
+<dt><kbd>-d, --dilation</kbd></dt>
+<dd><p>List of convolutional layers dilation</p>
+<p>Default: (1, 1)</p>
+</dd>
+<dt><kbd>-bs, --bias</kbd></dt>
+<dd><p>Boolean that indicates weather to use a bias term for convolutional layers</p>
+<p>Default: False</p>
+</dd>
+<dt><kbd>-cpm, --padding_mode</kbd></dt>
+<dd><p>Possible choices: zeros, reflect, replicate, circular</p>
+<p>Convolutional layers padding mode</p>
+<p>Default: &quot;zeros&quot;</p>
+</dd>
+<dt><kbd>-pf, --pooling_flag</kbd></dt>
+<dd><p>Boolean that indicates weather to use a pooling layer for downsampling</p>
+<p>Default: False</p>
+</dd>
+<dt><kbd>-pt, --pooling_type</kbd></dt>
+<dd><p>Possible choices: max, avg</p>
+<p>Pooling layer type: max, avg</p>
+<p>Default: &quot;max&quot;</p>
+</dd>
+<dt><kbd>-sl, --use_same_layer</kbd></dt>
+<dd><p>Boolean that indicates weather to add layers (input and output layers) with same shape</p>
+<p>Default: False</p>
+</dd>
+<dt><kbd>-r, --recurrent_flag</kbd></dt>
+<dd><p>Boolean that indicates weather to add recurrence term to the input current equation</p>
+<p>Default: False</p>
+</dd>
+<dt><kbd>-nm, --neuron_model</kbd></dt>
+<dd><p>Possible choices: lif, plif, if</p>
+<p>Neuron model name</p>
+<p>Default: &quot;lif&quot;</p>
+</dd>
+<dt><kbd>-tnp, --train_neuron_parameters</kbd></dt>
+<dd><p>Boolean that indicates weather to train neuron parameters</p>
+<p>Default: False</p>
+</dd>
+<dt><kbd>-npd, --neuron_parameters_init_dist</kbd></dt>
+<dd><p>Possible choices: <a href="#id13"><span class="problematic" id="id14">constant_</span></a>, <a href="#id15"><span class="problematic" id="id16">normal_</span></a>, <a href="#id17"><span class="problematic" id="id18">uniform_</span></a></p>
+<p>Neuron model parameters initialization distribution</p>
+<p>Default: &quot;<a href="#id19"><span class="problematic" id="id20">normal_</span></a>&quot;</p>
+</dd>
+<dt><kbd>-up, --upsample_mode</kbd></dt>
+<dd><p>Possible choices: nearest, bilinear</p>
+<p>Upsampling mode: nearest, bilinear</p>
+<p>Default: &quot;nearest&quot;</p>
+</dd>
+<dt><kbd>-tmf, --scale_flag</kbd></dt>
+<dd><p>Boolean that indicates weather to train the scaling layer</p>
+<p>Default: False</p>
+</dd>
+<dt><kbd>-mf, --scale_factor</kbd></dt>
+<dd><p>Constant value for the scaling layer</p>
+<p>Default: 1.0</p>
+</dd>
+<dt><kbd>-bnf, --bn_flag</kbd></dt>
+<dd><p>Boolean that indicates weather to add a batch normalization layer</p>
+<p>Default: False</p>
+</dd>
+<dt><kbd>-df, --dropout_flag</kbd></dt>
+<dd><p>Boolean that indicates weather to add a dropout layer</p>
+<p>Default: False</p>
+</dd>
+<dt><kbd>-dp, --dropout_p</kbd></dt>
+<dd><p>Dropout probability of an element to be zeroed</p>
+<p>Default: 0.1</p>
+</dd>
+<dt><kbd>-skp, --skip_connection_type</kbd></dt>
+<dd><p>Possible choices: <a href="#id21"><span class="problematic" id="id22">cat_</span></a>, <a href="#id23"><span class="problematic" id="id24">add_</span></a></p>
+<p>Skip connections type</p>
+<p>Default: &quot;<a href="#id25"><span class="problematic" id="id26">cat_</span></a>&quot;</p>
+</dd>
+<dt><kbd>-rsd, --nb_residual_block</kbd></dt>
+<dd><p>Number of transitional blocks for the residual block</p>
+<p>Default: 1.0</p>
+</dd>
+<dt><kbd>-rskp, --residual_skip_connection_type</kbd></dt>
+<dd><p>Possible choices: <a href="#id27"><span class="problematic" id="id28">add_</span></a>, <a href="#id29"><span class="problematic" id="id30">and_</span></a>, <a href="#id31"><span class="problematic" id="id32">iand_</span></a></p>
+<p>Residual skip connections type</p>
+<p>Default: &quot;<a href="#id33"><span class="problematic" id="id34">add_</span></a>&quot;</p>
+</dd>
+<dt><kbd>-out, --use_intermediate_output</kbd></dt>
+<dd><p>Boolean that indicates weather to add rescaled output from intermediate layers</p>
+<p>Default: False</p>
+</dd>
+<dt><kbd>-e, --nb_epochs</kbd></dt>
+<dd><p>Number of training iterations</p>
+<p>Default: 30</p>
+</dd>
+<dt><kbd>-we, --nb_warmup_epochs</kbd></dt>
+<dd><p>Number of training warmup iterations</p>
+<p>Default: 1.0</p>
+</dd>
+<dt><kbd>-b, --batch_size</kbd></dt>
+<dd><p>Number of data samples per batch</p>
+<p>Default: 32</p>
+</dd>
+<dt><kbd>-ts, --nb_steps_bin</kbd></dt>
+<dd><p>Number of forward pass time steps per bin</p>
+</dd>
+<dt><kbd>-tbptt, --truncated_bptt_ratio</kbd></dt>
+<dd><p>Truncated Backpropagation Through Time (BPTT) ratio over time steps</p>
+</dd>
+<dt><kbd>-surr, --surrogate_name</kbd></dt>
+<dd><p>Possible choices: SuperSpike, SigmoidDerivative, ATan, PiecewiseLinear</p>
+<p>Surrogate gradient function name</p>
+<p>Default: &quot;ATan&quot;</p>
+</dd>
+<dt><kbd>-ss, --surrogate_scale</kbd></dt>
+<dd><p>Surrogate gradient scale</p>
+</dd>
+<dt><kbd>-act, --activation_fn</kbd></dt>
+<dd><p>Possible choices: None, sigmoid, relu, lrelu, prelu, tanh</p>
+<p>List of ANN activation function name: input, hidden, output layers</p>
+<p>Default: ['lrelu']</p>
+</dd>
+<dt><kbd>-ln, --loss_name</kbd></dt>
+<dd><p>Possible choices: mse_loss, l1_loss, lsd_loss, time_mse_loss, huber_loss, stoi_loss, si_snr_loss, si_sdr_loss</p>
+<p>List of loss function name</p>
+<p>Default: ['mse_loss']</p>
+</dd>
+<dt><kbd>-lw, --loss_weight</kbd></dt>
+<dd><p>List of loss function weight</p>
+<p>Default: [1.0]</p>
+</dd>
+<dt><kbd>-lb, --loss_bias</kbd></dt>
+<dd><p>List of loss function bias</p>
+<p>Default: [0.0]</p>
+</dd>
+<dt><kbd>-o, --optimizer_name</kbd></dt>
+<dd><p>Optimizer name</p>
+<p>Default: &quot;Adam&quot;</p>
+</dd>
+<dt><kbd>-lr, --learning_rate</kbd></dt>
+<dd><p>Learning rate of the model during training</p>
+<p>Default: 0.0002</p>
+</dd>
+<dt><kbd>-bt, --betas</kbd></dt>
+<dd><p>Optimizer betas parameter</p>
+<p>Default: (0.5, 0.9)</p>
+</dd>
+<dt><kbd>-sch, --scheduler_name</kbd></dt>
+<dd><p>Possible choices: OneCycleLR, StepLR, MultiStepLR, ExponentialLR</p>
+<p>Scheduler name</p>
+</dd>
+<dt><kbd>-lrm, --lr_scheduler_max_lr</kbd></dt>
+<dd><p>Learning rate scheduler max_lr parameter</p>
+<p>Default: 0.002</p>
+</dd>
+<dt><kbd>-lrg, --lr_scheduler_gamma</kbd></dt>
+<dd><p>Learning rate scheduler gamma parameter</p>
+<p>Default: 0.8</p>
+</dd>
+<dt><kbd>-ct, --clip_type</kbd></dt>
+<dd><p>Possible choices: None, value, norm</p>
+<p>Gradient clipping type</p>
+</dd>
+<dt><kbd>-cv, --clip_value</kbd></dt>
+<dd><p>Gradient clipping value</p>
+<p>Default: 10.0</p>
+</dd>
+<dt><kbd>-tr, --train_flag</kbd></dt>
+<dd><p>Boolean that indicates weather to train the model</p>
+<p>Default: False</p>
+</dd>
+<dt><kbd>-pr, --pretrained_flag</kbd></dt>
+<dd><p>Boolean that indicates weather to load a pretrained model</p>
+<p>Default: False</p>
+</dd>
+<dt><kbd>-mid, --model_file_name_id</kbd></dt>
+<dd><p>Pretrained model file id</p>
+</dd>
+<dt><kbd>-sme, --save_mem</kbd></dt>
+<dd><p>Boolean that indicates weather to log hidden activations</p>
+<p>Default: False</p>
+</dd>
+<dt><kbd>-smd, --save_model</kbd></dt>
+<dd><p>Boolean that indicates weather to save checkpoint of pretrained model</p>
+<p>Default: False</p>
+</dd>
+<dt><kbd>-pmf, --perceptual_metric_flag</kbd></dt>
+<dd><p>Boolean that indicates weather to compute a perceptual metric</p>
+<p>Default: False</p>
+</dd>
+<dt><kbd>-dbg, --debug_flag</kbd></dt>
+<dd><p>Boolean that indicates weather to use debugging dataset</p>
+<p>Default: False</p>
+</dd>
+<dt><kbd>--workspace</kbd></dt>
+<dd><p>Comet ML experiment instance workspace argument</p>
+</dd>
+<dt><kbd>--api_key</kbd></dt>
+<dd><p>Comet ML experiment instance api_key argument</p>
+</dd>
+<dt><kbd>--project_name</kbd></dt>
+<dd><p>Comet ML experiment instance project_name argument</p>
+</dd>
+<dt><kbd>-hpc, --hpc_flag</kbd></dt>
+<dd><p>Boolean that indicates weather to use HPC configuration</p>
+<p>Default: False</p>
+</dd>
+<dt><kbd>-dist, --use_ddp</kbd></dt>
+<dd><p>Boolean that indicates weather to use Pytorch Distributed Data Parallel (DDP) library</p>
+<p>Default: False</p>
+</dd>
+<dt><kbd>-db, --dist_backend</kbd></dt>
+<dd><p>Possible choices: nccl, gloo</p>
+<p>DDP backend name</p>
+<p>Default: &quot;nccl&quot;</p>
+</dd>
+<dt><kbd>-eval, --evaluate_flag</kbd></dt>
+<dd><p>Boolean that indicates weather to evaluate model using the validation set during training</p>
+<p>Default: False</p>
+</dd>
+<dt><kbd>-cast, --use_amp</kbd></dt>
+<dd><p>Boolean that indicates weather to use Pytorch Automatic Mixed Precision (AMP) library</p>
+<p>Default: False</p>
+</dd>
+<dt><kbd>-zero, --use_zero</kbd></dt>
+<dd><p>Boolean that indicates weather to use Pytorch Zero Redundancy Optimizer (ZeRO)</p>
+<p>Default: False</p>
+</dd>
+<dt><kbd>-pm, --pin_memory</kbd></dt>
+<dd><p>Boolean that indicates pin_memory parameter for the data loader</p>
+<p>Default: False</p>
+</dd>
+<dt><kbd>-nw, --num_workers</kbd></dt>
+<dd><p>Number of workers parameter for the data loader</p>
+<p>Default: 0.0</p>
+</dd>
+<dt><kbd>-prf, --prefetch_factor</kbd></dt>
+<dd><p>Prefetch factor parameter for the data loader</p>
+<p>Default: 2</p>
+</dd>
+<dt><kbd>-det, --deterministic</kbd></dt>
+<dd><p>Boolean that indicates weather to use deterministic mode for reproducibility</p>
+<p>Default: False</p>
+</dd>
+<dt><kbd>-sd, --seed</kbd></dt>
+<dd><p>Reproducibility seed</p>
+<p>Default: 1.0</p>
+</dd>
+<dt><kbd>-ec, --empty_cache</kbd></dt>
+<dd><p>Boolean that indicates weather to empty cache</p>
+<p>Default: False</p>
+</dd>
+</dl>
+</section>
+</section>
+<section id="experiment-tracking-using-comet-ml">
+<h2>Experiment tracking using Comet ML<a class="headerlink" href="#experiment-tracking-using-comet-ml" title="Link to this heading">#</a></h2>
+<p>Sign up on <a class="reference external" href="https://www.comet.com/site/">comet.ml</a>, and add the following arguments to command line:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">--workspace &lt;Your Workspace&gt; --api_key &lt;Your API Key&gt; --project_name &lt;Your Project Name&gt;</span>
+</pre></div>
+</div>
+</section>
+</section>
+
+        </article>
+      </div>
+      <footer>
+        
+        <div class="related-pages">
+          <a class="next-page" href="modules/index.html">
+              <div class="page-info">
+                <div class="context">
+                  <span>Next</span>
+                </div>
+                <div class="title">Code Documentation</div>
+              </div>
+              <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
+            </a>
+          <a class="prev-page" href="introduction.html">
+              <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
+              <div class="page-info">
+                <div class="context">
+                  <span>Previous</span>
+                </div>
+                
+                <div class="title">Introduction</div>
+                
+              </div>
+            </a>
+        </div>
+        <div class="bottom-of-page">
+          <div class="left-details">
+            <div class="copyright">
+                Copyright &#169; 2023, Abir Riahi
+            </div>
+            Made with <a href="https://www.sphinx-doc.org/">Sphinx</a> and <a class="muted-link" href="https://pradyunsg.me">@pradyunsg</a>'s
+            
+            <a href="https://github.com/pradyunsg/furo">Furo</a>
+            
+          </div>
+          <div class="right-details">
+            
+          </div>
+        </div>
+        
+      </footer>
+    </div>
+    <aside class="toc-drawer">
+      
+      
+      <div class="toc-sticky toc-scroll">
+        <div class="toc-title-container">
+          <span class="toc-title">
+            On this page
+          </span>
+        </div>
+        <div class="toc-tree-container">
+          <div class="toc-tree">
+            <ul>
+<li><a class="reference internal" href="#">Quickstart</a><ul>
+<li><a class="reference internal" href="#installation">Installation</a></li>
+<li><a class="reference internal" href="#usage">Usage</a></li>
+<li><a class="reference internal" href="#arguments">Arguments</a><ul>
+<li><a class="reference internal" href="#named-arguments">Named Arguments</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#experiment-tracking-using-comet-ml">Experiment tracking using Comet ML</a></li>
+</ul>
+</li>
+</ul>
+
+          </div>
+        </div>
+      </div>
+      
+      
+    </aside>
+  </div>
+</div><script src="_static/documentation_options.js?v=1e580bb1"></script>
+    <script src="_static/doctools.js?v=888ff710"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/scripts/furo.js?v=32e29ea5"></script>
+    <script src="_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="_static/copybutton.js?v=f281be69"></script>
+    </body>
+</html>

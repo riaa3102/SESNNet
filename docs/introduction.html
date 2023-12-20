@@ -1,0 +1,453 @@
+<!doctype html>
+<html class="no-js" lang="Python" data-content_root="./">
+  <head><meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1"/>
+    <meta name="color-scheme" content="light dark"><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+<link rel="index" title="Index" href="genindex.html" /><link rel="search" title="Search" href="search.html" /><link rel="next" title="Quickstart" href="installation.html" /><link rel="prev" title="Welcome to SESNNet Documentation!" href="index.html" />
+
+    <!-- Generated with Sphinx 7.2.6 and Furo 2023.09.10 -->
+        <title>Introduction - SESNNet documentation</title>
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=a746c00c" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/furo.css?v=135e06be" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/furo-extensions.css?v=36a5483c" />
+    
+    
+
+
+<style>
+  body {
+    --color-code-background: #f8f8f8;
+  --color-code-foreground: black;
+  
+  }
+  @media not print {
+    body[data-theme="dark"] {
+      --color-code-background: #202020;
+  --color-code-foreground: #d0d0d0;
+  
+    }
+    @media (prefers-color-scheme: dark) {
+      body:not([data-theme="light"]) {
+        --color-code-background: #202020;
+  --color-code-foreground: #d0d0d0;
+  
+      }
+    }
+  }
+</style></head>
+  <body>
+    
+    <script>
+      document.body.dataset.theme = localStorage.getItem("theme") || "auto";
+    </script>
+    
+
+<svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+  <symbol id="svg-toc" viewBox="0 0 24 24">
+    <title>Contents</title>
+    <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 1024 1024">
+      <path d="M408 442h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8zm-8 204c0 4.4 3.6 8 8 8h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56zm504-486H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zm0 632H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zM115.4 518.9L271.7 642c5.8 4.6 14.4.5 14.4-6.9V388.9c0-7.4-8.5-11.5-14.4-6.9L115.4 505.1a8.74 8.74 0 0 0 0 13.8z"/>
+    </svg>
+  </symbol>
+  <symbol id="svg-menu" viewBox="0 0 24 24">
+    <title>Menu</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-menu">
+      <line x1="3" y1="12" x2="21" y2="12"></line>
+      <line x1="3" y1="6" x2="21" y2="6"></line>
+      <line x1="3" y1="18" x2="21" y2="18"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-arrow-right" viewBox="0 0 24 24">
+    <title>Expand</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-chevron-right">
+      <polyline points="9 18 15 12 9 6"></polyline>
+    </svg>
+  </symbol>
+  <symbol id="svg-sun" viewBox="0 0 24 24">
+    <title>Light mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="feather-sun">
+      <circle cx="12" cy="12" r="5"></circle>
+      <line x1="12" y1="1" x2="12" y2="3"></line>
+      <line x1="12" y1="21" x2="12" y2="23"></line>
+      <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+      <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+      <line x1="1" y1="12" x2="3" y2="12"></line>
+      <line x1="21" y1="12" x2="23" y2="12"></line>
+      <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+      <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-moon" viewBox="0 0 24 24">
+    <title>Dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-moon">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+      <path d="M12 3c.132 0 .263 0 .393 0a7.5 7.5 0 0 0 7.92 12.446a9 9 0 1 1 -8.313 -12.454z" />
+    </svg>
+  </symbol>
+  <symbol id="svg-sun-half" viewBox="0 0 24 24">
+    <title>Auto light/dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-shadow">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+      <circle cx="12" cy="12" r="9" />
+      <path d="M13 12h5" />
+      <path d="M13 15h4" />
+      <path d="M13 18h1" />
+      <path d="M13 9h4" />
+      <path d="M13 6h1" />
+    </svg>
+  </symbol>
+</svg>
+
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation">
+<input type="checkbox" class="sidebar-toggle" name="__toc" id="__toc">
+<label class="overlay sidebar-overlay" for="__navigation">
+  <div class="visually-hidden">Hide navigation sidebar</div>
+</label>
+<label class="overlay toc-overlay" for="__toc">
+  <div class="visually-hidden">Hide table of contents sidebar</div>
+</label>
+
+
+
+<div class="page">
+  <header class="mobile-header">
+    <div class="header-left">
+      <label class="nav-overlay-icon" for="__navigation">
+        <div class="visually-hidden">Toggle site navigation sidebar</div>
+        <i class="icon"><svg><use href="#svg-menu"></use></svg></i>
+      </label>
+    </div>
+    <div class="header-center">
+      <a href="index.html"><div class="brand">SESNNet  documentation</div></a>
+    </div>
+    <div class="header-right">
+      <div class="theme-toggle-container theme-toggle-header">
+        <button class="theme-toggle">
+          <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
+          <svg class="theme-icon-when-auto"><use href="#svg-sun-half"></use></svg>
+          <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
+          <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
+        </button>
+      </div>
+      <label class="toc-overlay-icon toc-header-icon" for="__toc">
+        <div class="visually-hidden">Toggle table of contents sidebar</div>
+        <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
+      </label>
+    </div>
+  </header>
+  <aside class="sidebar-drawer">
+    <div class="sidebar-container">
+      
+      <div class="sidebar-sticky"><a class="sidebar-brand" href="index.html">
+  
+  
+  <span class="sidebar-brand-text">SESNNet  documentation</span>
+  
+</a><form class="sidebar-search-container" method="get" action="search.html" role="search">
+  <input class="sidebar-search" placeholder="Search" name="q" aria-label="Search">
+  <input type="hidden" name="check_keywords" value="yes">
+  <input type="hidden" name="area" value="default">
+</form>
+<div id="searchbox"></div><div class="sidebar-scroll"><div class="sidebar-tree">
+  <ul class="current">
+<li class="toctree-l1 current current-page"><a class="current reference internal" href="#">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="installation.html">Quickstart</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="modules/index.html">Code Documentation</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" role="switch" type="checkbox"/><label for="toctree-checkbox-1"><div class="visually-hidden">Toggle navigation of Code Documentation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2 has-children"><a class="reference internal" href="modules/data/index.html">Data</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" role="switch" type="checkbox"/><label for="toctree-checkbox-2"><div class="visually-hidden">Toggle navigation of Data</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="modules/data/data.html">Dataset</a></li>
+<li class="toctree-l3"><a class="reference internal" href="modules/data/transform.html">Transform</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="modules/stft.html">STFT</a></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="modules/model/index.html">Modules</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" role="switch" type="checkbox"/><label for="toctree-checkbox-3"><div class="visually-hidden">Toggle navigation of Modules</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="modules/model/se.html">Speech enhancement</a></li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="modules/model/snn/index.html">Spiking Neural Network</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" role="switch" type="checkbox"/><label for="toctree-checkbox-4"><div class="visually-hidden">Toggle navigation of Spiking Neural Network</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l4 has-children"><a class="reference internal" href="modules/model/snn/model/index.html">SNN model</a><input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" role="switch" type="checkbox"/><label for="toctree-checkbox-5"><div class="visually-hidden">Toggle navigation of SNN model</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l5"><a class="reference internal" href="modules/model/snn/model/snnbase.html">SNN base class</a></li>
+<li class="toctree-l5"><a class="reference internal" href="modules/model/snn/model/fcsnn.html">FCSNN class</a></li>
+<li class="toctree-l5"><a class="reference internal" href="modules/model/snn/model/csnn.html">CSNN class</a></li>
+<li class="toctree-l5"><a class="reference internal" href="modules/model/snn/model/unetsnn.html">U-Net SNN class</a></li>
+<li class="toctree-l5"><a class="reference internal" href="modules/model/snn/model/resbottleneckunetsnn.html">ResBottleneck U-Net SNN class</a></li>
+</ul>
+</li>
+<li class="toctree-l4 has-children"><a class="reference internal" href="modules/model/snn/layer/index.html">SNN layer</a><input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" role="switch" type="checkbox"/><label for="toctree-checkbox-6"><div class="visually-hidden">Toggle navigation of SNN layer</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l5"><a class="reference internal" href="modules/model/snn/layer/linear.html">Linear layer class</a></li>
+<li class="toctree-l5"><a class="reference internal" href="modules/model/snn/layer/scale.html">Scale layer class</a></li>
+<li class="toctree-l5"><a class="reference internal" href="modules/model/snn/layer/recurrent.html">Recurrent layer class</a></li>
+<li class="toctree-l5"><a class="reference internal" href="modules/model/snn/layer/upsampling.html">Upsampling layer class</a></li>
+<li class="toctree-l5"><a class="reference internal" href="modules/model/snn/layer/neuron.html">Neuron model layer class</a></li>
+<li class="toctree-l5"><a class="reference internal" href="modules/model/snn/layer/lif.html">LIF layer class</a></li>
+</ul>
+</li>
+<li class="toctree-l4 has-children"><a class="reference internal" href="modules/model/snn/block/index.html">SNN block</a><input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" role="switch" type="checkbox"/><label for="toctree-checkbox-7"><div class="visually-hidden">Toggle navigation of SNN block</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l5"><a class="reference internal" href="modules/model/snn/block/fcblock.html">Fully Connected block class</a></li>
+<li class="toctree-l5"><a class="reference internal" href="modules/model/snn/block/cblock.html">Convolutional block class</a></li>
+<li class="toctree-l5"><a class="reference internal" href="modules/model/snn/block/rescblock.html">Residual block class</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="modules/model/surrogate/index.html">Surrogate gradient</a><input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" role="switch" type="checkbox"/><label for="toctree-checkbox-8"><div class="visually-hidden">Toggle navigation of Surrogate gradient</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l4"><a class="reference internal" href="modules/model/surrogate/super_spike.html">SuperSpike</a></li>
+<li class="toctree-l4"><a class="reference internal" href="modules/model/surrogate/sigmoid.html">Sigmoid Derivative</a></li>
+<li class="toctree-l4"><a class="reference internal" href="modules/model/surrogate/atan.html">ATan Derivative</a></li>
+<li class="toctree-l4"><a class="reference internal" href="modules/model/surrogate/piecewise_linear.html">Piecewise Linear</a></li>
+</ul>
+</li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="modules/model/ann/index.html">Artificial Neural Network</a><input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" role="switch" type="checkbox"/><label for="toctree-checkbox-9"><div class="visually-hidden">Toggle navigation of Artificial Neural Network</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l4 has-children"><a class="reference internal" href="modules/model/ann/model/index.html">ANN model</a><input class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" role="switch" type="checkbox"/><label for="toctree-checkbox-10"><div class="visually-hidden">Toggle navigation of ANN model</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l5"><a class="reference internal" href="modules/model/ann/model/annbase.html">ANN base class</a></li>
+<li class="toctree-l5"><a class="reference internal" href="modules/model/ann/model/cnn.html">CNN class</a></li>
+<li class="toctree-l5"><a class="reference internal" href="modules/model/ann/model/unet.html">U-Net ANN class</a></li>
+<li class="toctree-l5"><a class="reference internal" href="modules/model/ann/model/resbottleneckunet.html">ResBottleneck U-Net ANN class</a></li>
+</ul>
+</li>
+<li class="toctree-l4 has-children"><a class="reference internal" href="modules/model/ann/block/index.html">ANN block</a><input class="toctree-checkbox" id="toctree-checkbox-11" name="toctree-checkbox-11" role="switch" type="checkbox"/><label for="toctree-checkbox-11"><div class="visually-hidden">Toggle navigation of ANN block</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l5"><a class="reference internal" href="modules/model/ann/block/cblock.html">Convolutional block class</a></li>
+<li class="toctree-l5"><a class="reference internal" href="modules/model/ann/block/rescblock.html">Residual block class</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="modules/model/train.html">Training/Testing</a></li>
+<li class="toctree-l3"><a class="reference internal" href="modules/model/loss.html">Loss</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="modules/evaluation.html">Evaluation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="modules/visualization.html">Visualization</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="folders.html">Project Files Structure</a></li>
+</ul>
+
+</div>
+</div>
+
+      </div>
+      
+    </div>
+  </aside>
+  <div class="main">
+    <div class="content">
+      <div class="article-container">
+        <a href="#" class="back-to-top muted-link">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12z"></path>
+          </svg>
+          <span>Back to top</span>
+        </a>
+        <div class="content-icon-container">
+          
+<div class="theme-toggle-container theme-toggle-content">
+            <button class="theme-toggle">
+              <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
+              <svg class="theme-icon-when-auto"><use href="#svg-sun-half"></use></svg>
+              <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
+              <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
+            </button>
+          </div>
+          <label class="toc-overlay-icon toc-content-icon" for="__toc">
+            <div class="visually-hidden">Toggle table of contents sidebar</div>
+            <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
+          </label>
+        </div>
+        <article role="main">
+          <section id="introduction">
+<h1>Introduction<a class="headerlink" href="#introduction" title="Link to this heading">#</a></h1>
+<section id="speech-enhancement-using-u-net-snn">
+<h2>Speech Enhancement Using U-Net SNN<a class="headerlink" href="#speech-enhancement-using-u-net-snn" title="Link to this heading">#</a></h2>
+<p>Speech enhancement plays a crucial role in improving the quality of speech signals in various applications, such as telecommunications, voice-controlled systems, and hearing aids. The goal of speech enhancement is to suppress background noise and other distortions while preserving the intelligibility of the speech signal. In recent years, deep learning approaches have demonstrated remarkable performance in speech enhancement tasks.</p>
+<section id="system-overview">
+<h3>System overview<a class="headerlink" href="#system-overview" title="Link to this heading">#</a></h3>
+<p>The figure below illustrates the workflow of the speech enhancement system.</p>
+<a class="reference internal image-reference" href="_images/se_system.png"><img alt="Workflow of Speech Enhancement System" src="_images/se_system.png" style="width: 800px;" /></a>
+<p>Description:</p>
+<blockquote>
+<div><ol class="arabic simple">
+<li><p>Short-Time Fourier Transform (STFT) computation</p></li>
+<li><p>Log Power Spectrum (LPS) computation</p></li>
+<li><p>Spiking Neural Network (SNN) model</p></li>
+<li><p>Enhanced LPS computation</p></li>
+<li><p>Enhanced STFT magnitude computation</p></li>
+<li><p>Enhanced speech reconstruction</p></li>
+</ol>
+</div></blockquote>
+</section>
+<section id="network-architecture">
+<h3>Network architecture<a class="headerlink" href="#network-architecture" title="Link to this heading">#</a></h3>
+<p>U-Net SNN combines the benefits of the U-Net architecture and the temporal processing capabilities of spiking neural networks to enhance speech signals in the time-frequency domain.</p>
+<p>The figure below illustrates the network architecture of the SNN.</p>
+<a class="reference internal image-reference" href="_images/snn_architecture.png"><img alt="Architecture of U-Net SNN" src="_images/snn_architecture.png" style="width: 800px;" /></a>
+<p>The core principle of the U-Net SNN system lies in its ability to capture complex spectral and temporal patterns in the input speech and noise signals. By leveraging the inherent hierarchical structure of the U-Net architecture, the system can effectively extract and learn informative features at multiple scales. The spiking neural network component further allows for the modeling of temporal dynamics and precise timing information, which can be crucial for accurately separating speech from noise.</p>
+</section>
+<section id="evaluation-metrics">
+<h3>Evaluation Metrics<a class="headerlink" href="#evaluation-metrics" title="Link to this heading">#</a></h3>
+<p>The following metrics are commonly used to evaluate the performance of speech enhancement systems:</p>
+<blockquote>
+<div><ul>
+<li><p>Perceptual Evaluation of Speech Quality (PESQ)</p></li>
+<li><p>Short-Time Objective Intelligibility (STOI)</p></li>
+<li><p>Deep Noise Suppression Mean Opinion Score (DNSMOS)</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>Overall quality of the enhanced speech (OVRL)</p></li>
+<li><p>Quality of the speech signal (SIG)</p></li>
+<li><p>Background noise (BAK)</p></li>
+</ul>
+</div></blockquote>
+</li>
+</ul>
+</div></blockquote>
+</section>
+<section id="results">
+<h3>Results<a class="headerlink" href="#results" title="Link to this heading">#</a></h3>
+<p>The achieved results are summarized in the table below. The table provides a comparison of various evaluation metrics across different systems.</p>
+<div class="table-wrapper colwidths-given docutils container" id="id1">
+<table class="docutils align-center" id="id1">
+<caption><span class="caption-text">Evaluation metrics</span><a class="headerlink" href="#id1" title="Link to this table">#</a></caption>
+<colgroup>
+<col style="width: 25.9%" />
+<col style="width: 14.8%" />
+<col style="width: 14.8%" />
+<col style="width: 14.8%" />
+<col style="width: 14.8%" />
+<col style="width: 14.8%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"></th>
+<th class="head"></th>
+<th class="head"></th>
+<th class="head"></th>
+<th class="head"><p>DNSMOS</p></th>
+<th class="head"></th>
+</tr>
+<tr class="row-even"><th class="head"><p>System</p></th>
+<th class="head"><p>PESQ</p></th>
+<th class="head"><p>STOI</p></th>
+<th class="head"><p>OVRL</p></th>
+<th class="head"><p>SIG</p></th>
+<th class="head"><p>BAK</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-odd"><td><p>Noisy</p></td>
+<td><p>1.97</p></td>
+<td><p>0.92</p></td>
+<td><p>2.69</p></td>
+<td><p>3.34</p></td>
+<td><p>3.12</p></td>
+</tr>
+<tr class="row-even"><td><p>SNN</p></td>
+<td><p>2.66</p></td>
+<td><p>0.92</p></td>
+<td><p>2.81</p></td>
+<td><p>3.13</p></td>
+<td><p>3.85</p></td>
+</tr>
+<tr class="row-odd"><td><p>Equivalent ANN</p></td>
+<td><p>2.89</p></td>
+<td><p>0.94</p></td>
+<td><p>2.92</p></td>
+<td><p>3.23</p></td>
+<td><p>3.90</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<ul class="simple">
+<li><p>The &quot;Noisy&quot; category represents unprocessed data results.</p></li>
+<li><p>The &quot;SNN&quot; system refers to the implemented U-Net spiking neural network model.</p></li>
+<li><p>The &quot;Equivalent ANN&quot; system refers to a conventional artificial neural network (ANN) with identical architecture to the implemented SNN, where spiking neurons have been replaced with Leaky ReLU activation functions.</p></li>
+</ul>
+</section>
+</section>
+</section>
+
+        </article>
+      </div>
+      <footer>
+        
+        <div class="related-pages">
+          <a class="next-page" href="installation.html">
+              <div class="page-info">
+                <div class="context">
+                  <span>Next</span>
+                </div>
+                <div class="title">Quickstart</div>
+              </div>
+              <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
+            </a>
+          <a class="prev-page" href="index.html">
+              <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
+              <div class="page-info">
+                <div class="context">
+                  <span>Previous</span>
+                </div>
+                
+                <div class="title">Home</div>
+                
+              </div>
+            </a>
+        </div>
+        <div class="bottom-of-page">
+          <div class="left-details">
+            <div class="copyright">
+                Copyright &#169; 2023, Abir Riahi
+            </div>
+            Made with <a href="https://www.sphinx-doc.org/">Sphinx</a> and <a class="muted-link" href="https://pradyunsg.me">@pradyunsg</a>'s
+            
+            <a href="https://github.com/pradyunsg/furo">Furo</a>
+            
+          </div>
+          <div class="right-details">
+            
+          </div>
+        </div>
+        
+      </footer>
+    </div>
+    <aside class="toc-drawer">
+      
+      
+      <div class="toc-sticky toc-scroll">
+        <div class="toc-title-container">
+          <span class="toc-title">
+            On this page
+          </span>
+        </div>
+        <div class="toc-tree-container">
+          <div class="toc-tree">
+            <ul>
+<li><a class="reference internal" href="#">Introduction</a><ul>
+<li><a class="reference internal" href="#speech-enhancement-using-u-net-snn">Speech Enhancement Using U-Net SNN</a><ul>
+<li><a class="reference internal" href="#system-overview">System overview</a></li>
+<li><a class="reference internal" href="#network-architecture">Network architecture</a></li>
+<li><a class="reference internal" href="#evaluation-metrics">Evaluation Metrics</a></li>
+<li><a class="reference internal" href="#results">Results</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+          </div>
+        </div>
+      </div>
+      
+      
+    </aside>
+  </div>
+</div><script src="_static/documentation_options.js?v=1e580bb1"></script>
+    <script src="_static/doctools.js?v=888ff710"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/scripts/furo.js?v=32e29ea5"></script>
+    <script src="_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="_static/copybutton.js?v=f281be69"></script>
+    </body>
+</html>
